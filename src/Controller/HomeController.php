@@ -10,10 +10,10 @@ class HomeController extends AbstractController
 {
     #[Route(path: '/', name: 'app_home', methods: 'GET')]
     public function index(): Response
-    {   
+    {   $name = 'Clark kent';
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-         
+            'message' => $name,
         ]);
     }
 }
