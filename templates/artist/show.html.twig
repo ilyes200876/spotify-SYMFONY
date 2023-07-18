@@ -17,8 +17,24 @@
             </tr>
             <tr>
                 <th>LastName</th>
-                <td>{{ artist.lastName }}</td>
+                <td>{{ artist.firstName }}</td>
             </tr>
+        {# {% for i in 0..((artist.musics)|length -1) %}
+            <tr>
+                <th>Music n°{{ i + 1 }}</th>
+                <td>{{ artist.musics[i] }}</td>
+            </tr>
+        {% endfor %}             #}
+        {% set i = 1 %}
+        {% for music in artist.musics %}
+            <tr>
+                <th>Music n°{{ i }}</th>
+                <td><a href="{{ path('app_music_show', {
+                    'id': music.id
+                }) }}">{{ music }}</a></td>
+                {% set i = i + 1 %}
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 

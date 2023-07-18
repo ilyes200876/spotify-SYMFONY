@@ -1,5 +1,41 @@
+body,html{
+  height: 100%;
+  margin: 0;
+}
 
 
 body{
   background-color: aqua;
+  box-sizing: border-box;
+}
+
+.formBloc{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form{
+  width: 30%;
+  background-color: rgb(157, 157, 199);
+  border-radius: 10px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+  border-radius: 5px;
+  border: none;
+}
+
+.submit{
+  border-radius: 20px;
+  width: 100px;
+  border: none;
 }

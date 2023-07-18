@@ -19,6 +19,16 @@
                 <th>ReleaseDate</th>
                 <td>{{ music.releaseDate ? music.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            {% set i = 1 %}
+            {% for artist in music.artists %}
+                <tr>
+                    <th>Artist n°{{ i }}</th>
+                    <td><a href="{{ path('app_artist_show', {
+                        'id': artist.id
+                    }) }}">{{ artist }}</a></td>
+                    {% set i = i + 1 %}
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 
