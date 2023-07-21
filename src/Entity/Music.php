@@ -25,6 +25,9 @@ class Music
     #[ORM\ManyToMany(targetEntity: Artist::class, inversedBy: 'musics')]
     private Collection $artists;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $ImageFileName = null;
+
     public function __construct()
     {
         $this->artists = new ArrayCollection();
@@ -86,6 +89,18 @@ class Music
   public function __toString(): string
   {
     return $this->name;
+  }
+
+  public function getImageFileName(): ?string
+  {
+      return $this->ImageFileName;
+  }
+
+  public function setImageFileName(?string $ImageFileName): static
+  {
+      $this->ImageFileName = $ImageFileName;
+
+      return $this;
   }
 
 

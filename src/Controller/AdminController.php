@@ -19,7 +19,7 @@ class AdminController extends AbstractController
                 'controller_name' => 'AdminController',
             ]);
         }
-        return $this->redirectToRoute('app_fome');
+        return $this->redirectToRoute('app_home');
         
     }
 
